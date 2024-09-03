@@ -1,0 +1,366 @@
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Color Palette */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg-color: #333;
+    --header-text-color: #fff;
+    --hover-color: #3498db;
+    --header-border-color: #000;
+    --icon-color: #000;
+}
+
+/* Basic Body  */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* Header Styling */
+header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 20px 0;
+    border-bottom: 4px solid var(--header-border-color);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--header-text-color);
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--hover-color);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+}
+
+nav ul li a:hover::after {
+    transform: translateX(0);
+}
+
+nav ul li a:hover {
+    color: var(--hover-color);
+}
+
+/* Home Section */
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    flex-wrap: wrap;
+    opacity: 0; 
+    animation: fadeIn 1s forwards; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0; 
+    animation: slideUp 1s 0.5s forwards; 
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.profile-picture {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    opacity: 0; 
+    animation: scaleIn 1s 1s forwards; 
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.intro-text {
+    max-width: 600px;
+    opacity: 0; 
+    animation: fadeIn 1s 1.5s forwards; 
+}
+
+.social-resume {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    opacity: 0; 
+    animation: fadeIn 1s 2s forwards; 
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    color: var(--icon-color);
+    font-weight: bold;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+    color: var(--hover-color);
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-link:hover .social-icon {
+    transform: rotate(360deg);
+    opacity: 0.8;
+}
+
+/* Skills Section */
+#skills {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Projects Section  */
+#projects {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.project {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: var(--primary-color);
+    color: #000; /* Ensure text color stays black on hover */
+}
+
+.project h3 {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.project p {
+    text-align: left;
+    font-size: 1rem;
+    color: #000;
+}
+
+.project a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.project a:hover {
+    color: var(--hover-color);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .home-section {
+        flex-direction: column;
+    }
+
+    .profile-picture {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .intro-text {
+        max-width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .social-resume {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 15px;
+    }
+
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .social-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-link {
+        font-size: 0.875rem;
+    }
+
+    .skill-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .skill-card p {
+        font-size: 0.875rem;
+    }
+
+    #projects h2 {
+        font-size: 2rem;
+    }
+
+    .project h3 {
+        font-size: 1.5rem;
+    }
+
+    .project p {
+        font-size: 0.875rem;
+    }
+}
